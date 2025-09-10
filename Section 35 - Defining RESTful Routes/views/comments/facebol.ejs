@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebol Chat</title>
+  </head>
+  <body>
+    <main>
+      <h1>Comment Section</h1>
+      <hr />
+      <div>
+        <% for(let comms of comments){ %>
+        <div id="user-comment">
+          <h3>
+            <%= comms.username %> |
+            <a href="/comments/<%= comms.id %>">details</a> |
+            <a href="/comments/<%= comms.id %>/edit">edit</a> |
+            <!-- <a href="/comments/<%= comms.id %>/delete">delete</a> -->
+          </h3>
+
+          <p><%= comms.comment %></p>
+          <% } %>
+        </div>
+      </div>
+    </main>
+
+    <a href="/comments/new">New Comment</a>
+  </body>
+</html>
